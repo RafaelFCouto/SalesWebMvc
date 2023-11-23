@@ -366,3 +366,4 @@ C:\Users\ya079936\temp\web\SalesWeb\SalesWeb\obj\Debug\net461\Razor\Views\Depart
 C:\Users\ya079936\temp\web\SalesWeb\SalesWeb\bin\Debug\net461\MySqlConnector.dll
 C:\Users\ya079936\temp\web\SalesWeb\SalesWeb\bin\Debug\net461\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\ya079936\temp\web\SalesWeb\SalesWeb\bin\Debug\net461\Pomelo.JsonObject.dll
+C:\Users\ya079936\temp\web\SalesWeb\SalesWeb\obj\Debug\net461\Razor\Views\Sellers\Index.g.cshtml.cs

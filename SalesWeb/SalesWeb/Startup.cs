@@ -11,6 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SalesWeb.Data;
+using SalesWeb.Services;
 
 namespace SalesWeb
 {
@@ -44,6 +45,7 @@ namespace SalesWeb
 
 
             services.AddScoped<SeedingService>();
+            services.AddScoped<SellerService>();
 
 
 
