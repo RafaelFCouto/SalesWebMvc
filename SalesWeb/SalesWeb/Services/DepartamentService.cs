@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using SalesWeb.Models;
 using SalesWeb.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace SalesWeb.Services
 {
@@ -19,10 +20,10 @@ namespace SalesWeb.Services
 
         }
 
-        public List<Departament> FindAll()
+        public  async Task<List<Departament>> FindAllAsync()
         {
 
-            return _context.Departament.OrderBy(d=> d.Name).ToList();
+            return await _context.Departament.OrderBy(d=> d.Name).ToListAsync();
 
         }
 

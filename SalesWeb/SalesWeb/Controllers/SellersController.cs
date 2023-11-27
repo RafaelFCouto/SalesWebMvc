@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using SalesWeb.Data;
 using SalesWeb.Models;
 using SalesWeb.Models.ViewModels;
+using SalesWeb.Services.Exceptions;
 
 namespace SalesWeb.Controllers
 {
@@ -148,10 +149,18 @@ namespace SalesWeb.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var seller = await _context.Seller.FindAsync(id);
-            _context.Seller.Remove(seller);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                var seller = await _context.Seller.FindAsync(id);
+                _context.Seller.Remove(seller);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (IntegrityException e) 
+            {
+                return RedirectToAction(nameof(Error), new { message = e.Message });
+
+            }
         }
 
         private bool SellerExists(int id)
